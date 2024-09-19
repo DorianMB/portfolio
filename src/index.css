@@ -139,3 +139,7 @@ button:focus-visible {
 .h-section-top {
   height: calc(100vh - 160px);
 }
+
+.text-stroke {
+  -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+}
