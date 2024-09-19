@@ -140,6 +140,10 @@ button:focus-visible {
   height: calc(100vh - 160px);
 }
 
+.h-content-card {
+  height: calc(100% - 12rem);
+}
+
 .text-stroke {
   -webkit-text-stroke: 0.5px rgb(0, 0, 0);
 }
