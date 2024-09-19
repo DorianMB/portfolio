@@ -76,29 +76,63 @@ export default function Portfolio() {
   const projects = [
     {
       id: 1,
-      title: 'Cosmic E-commerce Platform',
-      description: 'A full-stack e-commerce solution for intergalactic trade.',
-      image: 'https://toggl.com/blog/wp-content/uploads/2021/05/how-to-create-a-website-project-plan.jpg',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
-      link: '/projects/cosmic-e-commerce',
+      title: 'Développeur Fullstack JS | La France mutualiste​',
+      description: `Création d'une plateforme de souscription pour assurance-vie et PER pour La France Mutualiste, 
+      gestions du profilage des clients et recommandation d'un profil de gestion pour leur produit financier. Gestion des signatures électroniques des contrats​`,
+      image: 'https://www.francetransactions.com/local/cache-vignettes/L392xH196/7146f9f25c2cdb8a96593ca815774c-4e243.png?1669044891',
+      technologies: ['Vuejs', 'Vite', 'NodeJs', 'NestJS', 'Jest​', 'MariaDB'],
+      link: '/projects/lfm',
     },
     {
       id: 2,
-      title: 'Asteroid Management System',
-      description:
-        'A collaborative tool for tracking and managing near-Earth objects.',
-      image: 'https://toggl.com/blog/wp-content/uploads/2021/05/how-to-create-a-website-project-plan.jpg',
-      technologies: ['Vue.js', 'Express', 'PostgreSQL', 'Chart.js'],
-      link: '/projects/asteroid-management',
+      title: 'Développeur Front Angular| Rexel​',
+      description: `Amélioration et maintenance de plusieurs plateformes pour Rexel, BtoB, BtoC et Tests automatisés pour les applications ​mobiles​​`,
+      image: 'https://www.smartbuildingsalliance.org/wp-content/uploads/2023/09/REXEL_vignette-portrait-membre-SBA.jpg',
+      technologies: ['Angular', 'Overkiz', '.net​​'],
+      link: '/projects/rexel',
     },
     {
       id: 3,
-      title: 'AI-powered Space Chatbot',
-      description:
-        'An intelligent chatbot for answering queries about space exploration.',
-      image: 'https://toggl.com/blog/wp-content/uploads/2021/05/how-to-create-a-website-project-plan.jpg',
-      technologies: ['Python', 'TensorFlow', 'Flask', 'React'],
-      link: '/projects/space-chatbot',
+      title: 'Développeur Front React | Nexans Asset Electrical​​',
+      description: `Création d’une plateforme de simulation pour Nexans sur la base d’un projet open source de Cosmotech. 
+      Gestion des données liés aux simulations pour importations, modifications et sauvegarde en amont.​​​`,
+      image: 'https://fret21.eu/wp-content/uploads/2020/11/NEXANS_Logo_CMYK-01-scaled.jpg',
+      technologies: ['React​'],
+      link: '/projects/nexans',
+    },
+    {
+      id: 4,
+      title: 'Développeur Mobile Hybride | Leyton travaux mobile​​',
+      description: `Implémentation de la version mobile Hybride (iOS & Android) de l’application de suivi des travaux de particuliers 
+      dans le​ secteur de Certificats d’Economie d’Energie (CEE) à destination de Leyton (usage interne et ouvert à ses partenaires)​​​​`,
+      image: 'https://leyton.com/fr/wp-content/uploads/sites/4/2022/04/Construction_HiRes_02_1726x756px.jpg',
+      technologies: ['Ionic', 'Angular', 'Java', 'Spring Boot', 'AWS​'],
+      link: '/projects/leyton-mobile',
+    },
+    {
+      id: 5,
+      title: 'Lead Dev Junior Front| Hardis Group Projet Interne​',
+      description: `Application interne visant à regrouper les évaluations des partenaires et collaborateurs Hardis sur leur satisfaction au sein de l'entreprise.​​​​​`,
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCWTKXgnp88enCEJDdXfcs26aewS-EojjSEA&s',
+      technologies: ['Angular', 'Java', 'Spring Boot'],
+      link: '/projects/collab',
+    },
+    {
+      id: 6,
+      title: 'Développeur Front Vuejs  | Itelis​',
+      description: `Projet de création d’une plateforme digitale pour le compte d’Itelis et à destination de ses partenaires​​​​​​`,
+      image: 'https://www.argusdelassurance.com/mediatheque/1/6/6/000012661_624x337_c.jpg',
+      technologies: ['Drupal', 'VueJS'],
+      link: '/projects/itelis',
+    },
+    {
+      id: 7,
+      title: 'Développeur Full stak Java / Angular | Leyton travaux web​',
+      description: `Projet de création d’une application de suivi des travaux de particuliers dans le secteur de 
+      Certificats d’Economie d’Energie (CEE) à destination de Leyton (usage interne et ouvert à ses partenaires)​​​​​​​`,
+      image: 'https://leyton.com/fr/wp-content/uploads/sites/4/2022/06/139.jpg',
+      technologies: ['Java', 'Spring Boot', 'Angular', 'AWS​'],
+      link: '/projects/leyton',
     },
   ];
 
@@ -1197,7 +1231,7 @@ export default function Portfolio() {
             className="text-4xl font-bold mb-8 text-center text-[#fca311]"
             variants={itemVariants}
           >
-            Contracter le centre de contrôle
+            Contacter le centre de contrôle
           </motion.h2>
           <MotionCard
             className="max-w-md mx-auto bg-[#14213d] border border-[#fca311]"
