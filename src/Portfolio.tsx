@@ -16,7 +16,6 @@ import { Label } from './components/ui/label';
 import {
   ChevronDown,
   Rocket,
-  Star,
   Eclipse,
   Orbit,
   Telescope,
