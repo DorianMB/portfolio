@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "@flaticon/flaticon-uicons/css/all/all.css";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from './components/ui/button';
 import {
@@ -108,575 +109,495 @@ export default function Portfolio() {
     ((Math.floor(Math.random() * (max - min + 1)) + min) / max) * 100;
 
   // Fonction pour générer un décalage Y avec scroll
-  const getScrollTransform = (minScroll: number, maxScroll: number) =>
-    useTransform(scrollY, [0, 500], [minScroll, maxScroll]);
+  const getScrollTransform = (minScroll: number, maxScroll: number) => {
+    return useTransform(scrollY, [0, 500], [getSize(minScroll, 0, 1), getSize(0, maxScroll, 1)]);
+  }
 
   // Fonction pour générer un décalage Y avec scroll
   const getRotation = () => (Math.floor(Math.random() * (360 - 0 + 1)));
 
+  // Fonction pour générer un décalage Y avec scroll
+  const getSize = (min: number, max: number, multi: number) => (Math.floor(Math.random() * (max - min + 1)) * multi);
+
   // Positions aléatoires pour chaque icône
   let iconsParallaxLeft = [
     {
-      icon: <Rocket className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(0, 300),
-      left: getRandomPosition(0, 300),
-      y: getScrollTransform(0, 100),
+      icon: <Rocket className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Eclipse className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(50, 400),
-      left: getRandomPosition(50, 400),
-      y: getScrollTransform(0, 150),
+      icon: <Eclipse className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Orbit className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(100, 500),
-      left: getRandomPosition(100, 500),
-      y: getScrollTransform(0, 200),
+      icon: <Orbit className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Telescope className="mr-2 h-12 w-12" />,
-      top: getRandomPosition(150, 600),
-      left: getRandomPosition(150, 600),
-      y: getScrollTransform(0, 250),
+      icon: <Telescope className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Satellite className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(200, 700),
-      left: getRandomPosition(200, 700),
-      y: getScrollTransform(0, 300),
+      icon: <Satellite className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <MoonStar className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(250, 800),
-      left: getRandomPosition(250, 800),
-      y: getScrollTransform(0, 350),
+      icon: <MoonStar className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkle className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(300, 900),
-      left: getRandomPosition(300, 900),
-      y: getScrollTransform(-100, 300),
+      icon: <Sparkle className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkles className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(350, 1000),
-      left: getRandomPosition(350, 1000),
-      y: getScrollTransform(50, 400),
+      icon: <Sparkles className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Moon className="mr-2 h-14 w-14" />,
-      top: getRandomPosition(400, 1100),
-      left: getRandomPosition(400, 1100),
-      y: getScrollTransform(-50, 300),
+      icon: <Moon className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <StarIcon className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(450, 1200),
-      left: getRandomPosition(450, 1200),
-      y: getScrollTransform(0, 400),
+      icon: <StarIcon className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Rocket className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(0, 300),
-      left: getRandomPosition(0, 300),
-      y: getScrollTransform(0, 100),
+      icon: <i className={`fi fi-rs-world mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Eclipse className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(50, 400),
-      left: getRandomPosition(50, 400),
-      y: getScrollTransform(0, 150),
+      icon: <i className={`fi fi-rs-galaxy-alt mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Orbit className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(100, 500),
-      left: getRandomPosition(100, 500),
-      y: getScrollTransform(0, 200),
+      icon: <i className={`fi fi-rs-space-shuttle mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Telescope className="mr-2 h-12 w-12" />,
-      top: getRandomPosition(150, 600),
-      left: getRandomPosition(150, 600),
-      y: getScrollTransform(0, 250),
+      icon: <i className={`fi fi-rs-meteor mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Satellite className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(200, 700),
-      left: getRandomPosition(200, 700),
-      y: getScrollTransform(0, 300),
+      icon: <i className={`fi fi-rs-galaxy-star mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <MoonStar className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(250, 800),
-      left: getRandomPosition(250, 800),
-      y: getScrollTransform(0, 350),
+      icon: <i className={`fi fi-rs-ufo mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkle className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(300, 900),
-      left: getRandomPosition(300, 900),
-      y: getScrollTransform(-100, 300),
+      icon: <i className={`fi fi-rs-user-astronaut mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkles className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(350, 1000),
-      left: getRandomPosition(350, 1000),
-      y: getScrollTransform(50, 400),
+      icon: <Rocket className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Moon className="mr-2 h-14 w-14" />,
-      top: getRandomPosition(400, 1100),
-      left: getRandomPosition(400, 1100),
-      y: getScrollTransform(-50, 300),
+      icon: <Eclipse className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <StarIcon className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(450, 1200),
-      left: getRandomPosition(450, 1200),
-      y: getScrollTransform(0, 400),
+      icon: <Orbit className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Rocket className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(0, 300),
-      left: getRandomPosition(0, 300),
-      y: getScrollTransform(0, 100),
+      icon: <Telescope className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Eclipse className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(50, 400),
-      left: getRandomPosition(50, 400),
-      y: getScrollTransform(0, 150),
+      icon: <Satellite className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Orbit className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(100, 500),
-      left: getRandomPosition(100, 500),
-      y: getScrollTransform(0, 200),
+      icon: <MoonStar className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Telescope className="mr-2 h-12 w-12" />,
-      top: getRandomPosition(150, 600),
-      left: getRandomPosition(150, 600),
-      y: getScrollTransform(0, 250),
+      icon: <Sparkle className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Satellite className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(200, 700),
-      left: getRandomPosition(200, 700),
-      y: getScrollTransform(0, 300),
+      icon: <Sparkles className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <MoonStar className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(250, 800),
-      left: getRandomPosition(250, 800),
-      y: getScrollTransform(0, 350),
+      icon: <Moon className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkle className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(300, 900),
-      left: getRandomPosition(300, 900),
-      y: getScrollTransform(-100, 300),
+      icon: <StarIcon className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkles className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(350, 1000),
-      left: getRandomPosition(350, 1000),
-      y: getScrollTransform(50, 400),
+      icon: <i className={`fi fi-rs-world mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Moon className="mr-2 h-14 w-14" />,
-      top: getRandomPosition(400, 1100),
-      left: getRandomPosition(400, 1100),
-      y: getScrollTransform(-50, 300),
+      icon: <i className={`fi fi-rs-galaxy-alt mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <StarIcon className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(450, 1200),
-      left: getRandomPosition(450, 1200),
-      y: getScrollTransform(0, 400),
+      icon: <i className={`fi fi-rs-space-shuttle mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Rocket className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(0, 300),
-      left: getRandomPosition(0, 300),
-      y: getScrollTransform(0, 100),
+      icon: <i className={`fi fi-rs-meteor mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Eclipse className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(50, 400),
-      left: getRandomPosition(50, 400),
-      y: getScrollTransform(0, 150),
+      icon: <i className={`fi fi-rs-galaxy-star mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Orbit className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(100, 500),
-      left: getRandomPosition(100, 500),
-      y: getScrollTransform(0, 200),
+      icon: <i className={`fi fi-rs-ufo mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Telescope className="mr-2 h-12 w-12" />,
-      top: getRandomPosition(150, 600),
-      left: getRandomPosition(150, 600),
-      y: getScrollTransform(0, 250),
-      rotate: getRotation()
-    },
-    {
-      icon: <Satellite className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(200, 700),
-      left: getRandomPosition(200, 700),
-      y: getScrollTransform(0, 300),
-      rotate: getRotation()
-    },
-    {
-      icon: <MoonStar className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(250, 800),
-      left: getRandomPosition(250, 800),
-      y: getScrollTransform(0, 350),
-      rotate: getRotation()
-    },
-    {
-      icon: <Sparkle className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(300, 900),
-      left: getRandomPosition(300, 900),
-      y: getScrollTransform(-100, 300),
-      rotate: getRotation()
-    },
-    {
-      icon: <Sparkles className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(350, 1000),
-      left: getRandomPosition(350, 1000),
-      y: getScrollTransform(50, 400),
-      rotate: getRotation()
-    },
-    {
-      icon: <Moon className="mr-2 h-14 w-14" />,
-      top: getRandomPosition(400, 1100),
-      left: getRandomPosition(400, 1100),
-      y: getScrollTransform(-50, 300),
-      rotate: getRotation()
-    },
-    {
-      icon: <StarIcon className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(450, 1200),
-      left: getRandomPosition(450, 1200),
-      y: getScrollTransform(0, 400),
+      icon: <i className={`fi fi-rs-user-astronaut mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      left: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
   ];
 
   let iconsParallaxRight = [
     {
-      icon: <Rocket className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(0, 300),
-      left: getRandomPosition(0, 300),
-      y: getScrollTransform(0, 100),
+      icon: <Rocket className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Eclipse className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(50, 400),
-      left: getRandomPosition(50, 400),
-      y: getScrollTransform(0, 150),
+      icon: <Eclipse className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Orbit className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(100, 500),
-      left: getRandomPosition(100, 500),
-      y: getScrollTransform(0, 200),
+      icon: <Orbit className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Telescope className="mr-2 h-12 w-12" />,
-      top: getRandomPosition(150, 600),
-      left: getRandomPosition(150, 600),
-      y: getScrollTransform(0, 250),
+      icon: <Telescope className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Satellite className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(200, 700),
-      left: getRandomPosition(200, 700),
-      y: getScrollTransform(0, 300),
+      icon: <Satellite className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <MoonStar className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(250, 800),
-      left: getRandomPosition(250, 800),
-      y: getScrollTransform(0, 350),
+      icon: <MoonStar className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkle className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(300, 900),
-      left: getRandomPosition(300, 900),
-      y: getScrollTransform(-100, 300),
+      icon: <Sparkle className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkles className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(350, 1000),
-      left: getRandomPosition(350, 1000),
-      y: getScrollTransform(50, 400),
+      icon: <Sparkles className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Moon className="mr-2 h-14 w-14" />,
-      top: getRandomPosition(400, 1100),
-      left: getRandomPosition(400, 1100),
-      y: getScrollTransform(-50, 300),
+      icon: <Moon className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <StarIcon className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(450, 1200),
-      left: getRandomPosition(450, 1200),
-      y: getScrollTransform(0, 400),
+      icon: <StarIcon className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Rocket className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(0, 300),
-      left: getRandomPosition(0, 300),
-      y: getScrollTransform(0, 100),
+      icon: <i className={`fi fi-rs-world mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Eclipse className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(50, 400),
-      left: getRandomPosition(50, 400),
-      y: getScrollTransform(0, 150),
+      icon: <i className={`fi fi-rs-galaxy-alt mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Orbit className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(100, 500),
-      left: getRandomPosition(100, 500),
-      y: getScrollTransform(0, 200),
+      icon: <i className={`fi fi-rs-space-shuttle mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Telescope className="mr-2 h-12 w-12" />,
-      top: getRandomPosition(150, 600),
-      left: getRandomPosition(150, 600),
-      y: getScrollTransform(0, 250),
+      icon: <i className={`fi fi-rs-meteor mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Satellite className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(200, 700),
-      left: getRandomPosition(200, 700),
-      y: getScrollTransform(0, 300),
+      icon: <i className={`fi fi-rs-galaxy-star mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <MoonStar className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(250, 800),
-      left: getRandomPosition(250, 800),
-      y: getScrollTransform(0, 350),
+      icon: <i className={`fi fi-rs-ufo mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkle className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(300, 900),
-      left: getRandomPosition(300, 900),
-      y: getScrollTransform(-100, 300),
+      icon: <i className={`fi fi-rs-user-astronaut mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkles className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(350, 1000),
-      left: getRandomPosition(350, 1000),
-      y: getScrollTransform(50, 400),
+      icon: <Rocket className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Moon className="mr-2 h-14 w-14" />,
-      top: getRandomPosition(400, 1100),
-      left: getRandomPosition(400, 1100),
-      y: getScrollTransform(-50, 300),
+      icon: <Eclipse className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <StarIcon className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(450, 1200),
-      left: getRandomPosition(450, 1200),
-      y: getScrollTransform(0, 400),
+      icon: <Orbit className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Rocket className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(0, 300),
-      left: getRandomPosition(0, 300),
-      y: getScrollTransform(0, 100),
+      icon: <Telescope className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Eclipse className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(50, 400),
-      left: getRandomPosition(50, 400),
-      y: getScrollTransform(0, 150),
+      icon: <Satellite className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Orbit className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(100, 500),
-      left: getRandomPosition(100, 500),
-      y: getScrollTransform(0, 200),
+      icon: <MoonStar className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Telescope className="mr-2 h-12 w-12" />,
-      top: getRandomPosition(150, 600),
-      left: getRandomPosition(150, 600),
-      y: getScrollTransform(0, 250),
+      icon: <Sparkle className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Satellite className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(200, 700),
-      left: getRandomPosition(200, 700),
-      y: getScrollTransform(0, 300),
+      icon: <Sparkles className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <MoonStar className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(250, 800),
-      left: getRandomPosition(250, 800),
-      y: getScrollTransform(0, 350),
+      icon: <Moon className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkle className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(300, 900),
-      left: getRandomPosition(300, 900),
-      y: getScrollTransform(-100, 300),
+      icon: <StarIcon className={`mr-2 h-${getSize(4,14,2)} w-${getSize(4,14,2)}`} />,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Sparkles className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(350, 1000),
-      left: getRandomPosition(350, 1000),
-      y: getScrollTransform(50, 400),
+      icon: <i className={`fi fi-rs-world mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Moon className="mr-2 h-14 w-14" />,
-      top: getRandomPosition(400, 1100),
-      left: getRandomPosition(400, 1100),
-      y: getScrollTransform(-50, 300),
+      icon: <i className={`fi fi-rs-galaxy-alt mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <StarIcon className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(450, 1200),
-      left: getRandomPosition(450, 1200),
-      y: getScrollTransform(0, 400),
+      icon: <i className={`fi fi-rs-space-shuttle mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Rocket className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(0, 300),
-      left: getRandomPosition(0, 300),
-      y: getScrollTransform(0, 100),
+      icon: <i className={`fi fi-rs-meteor mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Eclipse className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(50, 400),
-      left: getRandomPosition(50, 400),
-      y: getScrollTransform(0, 150),
+      icon: <i className={`fi fi-rs-galaxy-star mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Orbit className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(100, 500),
-      left: getRandomPosition(100, 500),
-      y: getScrollTransform(0, 200),
+      icon: <i className={`fi fi-rs-ufo mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
     {
-      icon: <Telescope className="mr-2 h-12 w-12" />,
-      top: getRandomPosition(150, 600),
-      left: getRandomPosition(150, 600),
-      y: getScrollTransform(0, 250),
-      rotate: getRotation()
-    },
-    {
-      icon: <Satellite className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(200, 700),
-      left: getRandomPosition(200, 700),
-      y: getScrollTransform(0, 300),
-      rotate: getRotation()
-    },
-    {
-      icon: <MoonStar className="mr-2 h-8 w-8" />,
-      top: getRandomPosition(250, 800),
-      left: getRandomPosition(250, 800),
-      y: getScrollTransform(0, 350),
-      rotate: getRotation()
-    },
-    {
-      icon: <Sparkle className="mr-2 h-10 w-10" />,
-      top: getRandomPosition(300, 900),
-      left: getRandomPosition(300, 900),
-      y: getScrollTransform(-100, 300),
-      rotate: getRotation()
-    },
-    {
-      icon: <Sparkles className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(350, 1000),
-      left: getRandomPosition(350, 1000),
-      y: getScrollTransform(50, 400),
-      rotate: getRotation()
-    },
-    {
-      icon: <Moon className="mr-2 h-14 w-14" />,
-      top: getRandomPosition(400, 1100),
-      left: getRandomPosition(400, 1100),
-      y: getScrollTransform(-50, 300),
-      rotate: getRotation()
-    },
-    {
-      icon: <StarIcon className="mr-2 h-6 w-6" />,
-      top: getRandomPosition(450, 1200),
-      left: getRandomPosition(450, 1200),
-      y: getScrollTransform(0, 400),
+      icon: <i className={`fi fi-rs-user-astronaut mr-2 flex scale-[${getSize(1,9,1)}]`}></i>,
+      top: getRandomPosition(0, 2000),
+      right: getRandomPosition(0, 2000),
+      y: getScrollTransform(0, 700),
       rotate: getRotation()
     },
   ];
@@ -763,8 +684,8 @@ export default function Portfolio() {
     iconsParallaxLeft = iconsParallaxLeft.slice(0, Math.floor(iconsParallaxLeft.length / 2));
     iconsParallaxRight = iconsParallaxRight.slice(0, Math.floor(iconsParallaxRight.length / 2));
   } else if (screenWidth < 1000) {
-    iconsParallaxLeft = iconsParallaxLeft.slice(0, Math.floor(iconsParallaxLeft.length / 4));
-    iconsParallaxRight = iconsParallaxRight.slice(0, Math.floor(iconsParallaxRight.length / 4));
+    iconsParallaxLeft = iconsParallaxLeft.slice(0, Math.floor(iconsParallaxLeft.length / 3));
+    iconsParallaxRight = iconsParallaxRight.slice(0, Math.floor(iconsParallaxRight.length / 3));
   }
 
   return (
@@ -788,7 +709,7 @@ export default function Portfolio() {
               />
             </div>
             <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#fca311] to-[#e5e5e5]">
-              Dorian Marques
+              Dorian Marques 
             </h1>
           </motion.div>
           <motion.nav
@@ -837,7 +758,7 @@ export default function Portfolio() {
             style={{
               y: para.y,
               top: para.top / 1.5 + 'vh',
-              right: para.left + 'vw',
+              right: para.right + 'vw',
               rotate: para.rotate + 'deg',
             }}
           >
