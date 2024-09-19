@@ -782,7 +782,7 @@ export default function Portfolio() {
           >
             <div className="relative w-20 h-20 mr-4 rounded-full overflow-hidden border-4 border-[#fca311] shadow-lg">
               <img
-                src="https://www.peterallan.fr/media/2F0TGPZMT2F0040U0KEQQ0.jpg"
+                src="https://media.licdn.com/dms/image/v2/C5603AQEJ2oFs_spU9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1583250393013?e=1732147200&v=beta&t=XyOkyW37mzQ0ERc5FkjN0BJc9l4Vb__ZZd90IlHCjLs"
                 alt="Dorian Marques"
                 className="w-full h-full object-cover"
               />
