@@ -1243,7 +1243,7 @@ export default function Portfolio() {
                       <Badge
                         key={index}
                         variant="secondary"
-                        className="bg-[#000000] text-[#fca311] border border-[#fca311]"
+                        className="bg-[#000000] text-[#fca311] border border-[#fca311] hover:bg-[#ffffff]"
                       >
                         {tech}
                       </Badge>
