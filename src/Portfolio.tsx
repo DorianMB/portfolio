@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import "@flaticon/flaticon-uicons/css/all/all.css";
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Button } from './components/ui/button';
 import {
   Card,
@@ -28,10 +28,44 @@ import {
   StarIcon,
   Linkedin,
   Mail,
+  Code,
+  Coffee,
+  Bug,
+  Pizza,
+  SquareTerminal,
 } from 'lucide-react';
 import { useRef } from 'react';
+import React from 'react';
 
 const MotionCard = motion(Card);
+
+const useCountUp = (end: number, duration: number = 2, start: number = 0) => {
+  const [count, setCount] = useState(start)
+  const nodeRef = useRef<HTMLSpanElement>(null)
+  const isInView = useInView(nodeRef, { once: true })
+
+  useEffect(() => {
+    let startTime: number | null = null
+    let animationFrame: number
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp
+      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1)
+      setCount(Math.floor(progress * (end - start) + start))
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate)
+      }
+    }
+
+    if (isInView) {
+      animationFrame = requestAnimationFrame(animate)
+    }
+
+    return () => cancelAnimationFrame(animationFrame)
+  }, [end, duration, start, isInView])
+
+  return { count, ref: nodeRef }
+}
 
 export default function Portfolio() {
   const [name, setName] = useState('');
@@ -136,6 +170,17 @@ export default function Portfolio() {
       link: '/projects/leyton',
     },
   ];
+
+  const achievements = [
+    { number: 10000000, label: "Lignes de code écrites", icon: <Code className="h-8 w-8 text-[#fca311]" /> },
+    { number: 10, label: "Projets complétés", icon: <Rocket className="h-8 w-8 text-[#fca311]" /> },
+    { number: 123456, label: "Cafés consommés", icon: <Coffee className="h-8 w-8 text-[#fca311]" /> },
+    { number: 42, label: "Bugs quantiques résolus", icon: <Bug className="h-8 w-8 text-[#fca311]" /> },
+    { number: 314, label: "Pizzas commandées en urgence", icon: <Pizza className="h-8 w-8 text-[#fca311]" /> },
+    { number: 256, label: "Nuits blanches passées à coder", icon: <Moon className="h-8 w-8 text-[#fca311]" /> },
+    { number: 666, label: "Projets personnels commencés", icon: <SquareTerminal className="h-8 w-8 text-[#fca311]" /> },
+    { number: 123, label: "Heures passées sur Stack Overflow", icon: <svg className="h-8 w-8 fill-[#fca311]" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Stack Overflow</title><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg> },
+  ]
 
   const { scrollY } = useScroll();
 
@@ -1219,6 +1264,40 @@ export default function Portfolio() {
                 </div>
               </MotionCard>
             ))}
+          </div>
+        </motion.section>
+
+        <motion.section
+          className="py-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+        >
+          <motion.h2
+            className="text-4xl font-bold mb-12 text-center text-[#fca311]"
+            variants={itemVariants}
+          >
+            Mon Univers en quelques chiffres
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {achievements.map((achievement, index) => {
+              const { count, ref } = useCountUp(achievement.number)
+              return (
+                <motion.div
+                  key={index}
+                  className="bg-[#14213d] p-6 rounded-lg border border-[#fca311] flex flex-col items-center justify-center space-y-4"
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(252, 163, 17, 0.3)' }}
+                >
+                  {achievement.icon}
+                  <span ref={ref} className="text-4xl font-bold text-[#fca311]">
+                    {count.toLocaleString()}
+                  </span>
+                  <span className="text-center text-[#e5e5e5]">{achievement.label}</span>
+                </motion.div>
+              )
+            })}
           </div>
         </motion.section>
 
