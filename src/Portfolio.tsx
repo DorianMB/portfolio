@@ -172,14 +172,14 @@ export default function Portfolio() {
   ];
 
   const achievements = [
-    { number: 10000000, label: "Lignes de code écrites", icon: <Code className="h-8 w-8 text-[#fca311]" /> },
+    { number: 750000, label: "Lignes de code écrites", icon: <Code className="h-8 w-8 text-[#fca311]" /> },
     { number: 10, label: "Projets complétés", icon: <Rocket className="h-8 w-8 text-[#fca311]" /> },
-    { number: 123456, label: "Cafés consommés", icon: <Coffee className="h-8 w-8 text-[#fca311]" /> },
-    { number: 42, label: "Bugs quantiques résolus", icon: <Bug className="h-8 w-8 text-[#fca311]" /> },
-    { number: 314, label: "Pizzas commandées en urgence", icon: <Pizza className="h-8 w-8 text-[#fca311]" /> },
-    { number: 256, label: "Nuits blanches passées à coder", icon: <Moon className="h-8 w-8 text-[#fca311]" /> },
+    { number: 1800, label: "Cafés consommés", icon: <Coffee className="h-8 w-8 text-[#fca311]" /> },
+    { number: 50, label: "Bugs quantiques résolus", icon: <Bug className="h-8 w-8 text-[#fca311]" /> },
+    { number: 500, label: "Pizzas commandées en urgence", icon: <Pizza className="h-8 w-8 text-[#fca311]" /> },
+    { number: 100, label: "Nuits blanches passées à coder", icon: <Moon className="h-8 w-8 text-[#fca311]" /> },
     { number: 666, label: "Projets personnels commencés", icon: <SquareTerminal className="h-8 w-8 text-[#fca311]" /> },
-    { number: 123, label: "Heures passées sur Stack Overflow", icon: <svg className="h-8 w-8 fill-[#fca311]" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Stack Overflow</title><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg> },
+    { number: 200, label: "Heures passées sur Stack Overflow", icon: <svg className="h-8 w-8 fill-[#fca311]" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Stack Overflow</title><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg> },
   ]
 
   const { scrollY } = useScroll();
