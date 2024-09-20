@@ -1013,10 +1013,8 @@ export default function Portfolio() {
     },
   ];
 
-
   //Adjustment of the number of icons according to the screen size
   const screenWidth = window.screen.width;
-
 
   if (screenWidth <= 1500 && screenWidth >= 1000) {
     iconsParallaxLeft = iconsParallaxLeft.slice(0, Math.floor(iconsParallaxLeft.length / 1.5));
@@ -1056,7 +1054,8 @@ export default function Portfolio() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <a href="#about" className="hover:text-[#fca311] transition-colors">
+            <a href="#about"
+               className="hover:text-[#fca311] transition-colors">
               A propos de moi
             </a>
             <a
@@ -1301,7 +1300,7 @@ export default function Portfolio() {
           </div>
         </motion.section>
 
-        <motion.section
+        {/*<motion.section
           id="contact"
           className="py-20"
           initial="hidden"
@@ -1381,7 +1380,7 @@ export default function Portfolio() {
               </form>
             </CardContent>
           </MotionCard>
-        </motion.section>
+        </motion.section>*/}
       </main>
 
       <footer className="bg-[#000000] py-8 mt-20 border-t border-[#14213d]">
