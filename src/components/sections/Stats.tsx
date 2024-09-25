@@ -39,7 +39,7 @@ export default function Stats({ containerVariants, itemVariants }: SectionProps)
             >
                 Mon Univers en quelques chiffres
             </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {achievements.map((achievement, index) => {
                     const { count, ref } = useCountUp(achievement.number)
                     return (
@@ -50,7 +50,7 @@ export default function Stats({ containerVariants, itemVariants }: SectionProps)
                             whileHover={{ scale: 1.05, boxShadow: '0 0 25px rgba(252, 163, 17, 0.3)' }}
                         >
                             {achievement.icon}
-                            <span ref={ref} className="text-4xl font-bold text-[#fca311]">
+                            <span ref={ref} className="text-2xl md:text-4xl font-bold text-[#fca311]">
                                 {count.toString()}
                             </span>
                             <span className="text-center text-[#e5e5e5]">{achievement.label}</span>
