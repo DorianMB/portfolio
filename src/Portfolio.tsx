@@ -11,9 +11,6 @@ import {
   CardTitle,
 } from './components/ui/card';
 import { Badge } from './components/ui/badge';
-import { Input } from './components/ui/input';
-import { Textarea } from './components/ui/textarea';
-import { Label } from './components/ui/label';
 import {
   ChevronDown,
   Rocket,
@@ -35,7 +32,6 @@ import {
   SquareTerminal,
 } from 'lucide-react';
 import { useRef } from 'react';
-import React from 'react';
 
 const MotionCard = motion(Card);
 
@@ -68,19 +64,8 @@ const useCountUp = (end: number, duration: number = 2, start: number = 0) => {
 }
 
 export default function Portfolio() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
 
   const aboutSectionRef = useRef<HTMLDivElement>(null);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', { name, email, message });
-    setName('');
-    setEmail('');
-    setMessage('');
-  };
 
   const scrollToAbout = () => {
     if (aboutSectionRef.current) {
@@ -1299,88 +1284,6 @@ export default function Portfolio() {
             })}
           </div>
         </motion.section>
-
-        {/*<motion.section
-          id="contact"
-          className="py-20"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-        >
-          <motion.h2
-            className="text-4xl font-bold mb-8 text-center text-[#fca311]"
-            variants={itemVariants}
-          >
-            Contacter le centre de contrôle
-          </motion.h2>
-          <MotionCard
-            className="max-w-md mx-auto bg-[#14213d] border border-[#fca311]"
-            variants={itemVariants}
-          >
-            <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-center text-[#fca311]">
-                Lancez la transmission
-              </CardTitle>
-              <CardDescription className="text-center text-[#e5e5e5]">
-                <p>Prêt a démarrer votre prochain project avec moi ?</p>
-                <p>Envoyé moi un message !</p>
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name" className="text-[#fca311]">
-                    Nom / Prénom
-                  </Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Votre nom et prénom"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    className="bg-[#000000] border-[#fca311] text-[#e5e5e5] placeholder-[#e5e5e5] focus:ring-[#fca311] focus:border-[#fca311]"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-[#fca311]">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="Votre email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="bg-[#000000] border-[#fca311] text-[#e5e5e5] placeholder-[#e5e5e5] focus:ring-[#fca311] focus:border-[#fca311]"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-[#fca311]">
-                    Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Votre message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    required
-                    className="bg-[#000000] border-[#fca311] text-[#e5e5e5] placeholder-[#e5e5e5] focus:ring-[#fca311] focus:border-[#fca311] min-h-[100px]"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-[#fca311] hover:bg-[#e5e5e5] text-[#000000] hover:text-[#14213d]"
-                >
-                  Envoyer le message
-                  <Rocket className="ml-2 h-4 w-4" />
-                </Button>
-              </form>
-            </CardContent>
-          </MotionCard>
-        </motion.section>*/}
       </main>
 
       <footer className="bg-[#000000] py-8 mt-20 border-t border-[#14213d]">
