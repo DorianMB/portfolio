@@ -21,7 +21,7 @@ export default function Welcome() {
         Full Stack Développeur
       </motion.h2>
       <motion.p
-        className="text-2xl mb-8 text-[#e5e5e5] drop-shadow"
+        className="text-2xl mb-8 text-[#e5e5e5] drop-shadow-[0_1px_2px_rgba(0,0,0,1)]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2 }}

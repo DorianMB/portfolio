@@ -80,13 +80,13 @@ export default function About({containerVariants, itemVariants}: SectionProps) {
             </motion.h2>
             <div className="grid md:grid-cols-2 gap-8 items-center">
                 <motion.div variants={itemVariants}>
-                    <p className="mb-4 text-lg text-[#e5e5e5]">
+                    <p className="mb-4 text-lg text-[#e5e5e5] drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">
                         Je suis Dorian Marques Braga, développeur fullstack avec une expertise notable dans les 4 grandes technologies JS (Angular / Vue / React, NodeJS).
                         Titulaire d’un Master en ingénierie numérique de l’Institut de l’internet et du multimédia à Paris, j’ai acquis une solide formation académique.
                         Depuis le début de ma carrière, j’ai travaillé chez Hardis Group, où j’ai contribué à de nombreux projets internes et externes,
                         collaborant avec de grandes entreprises. Ces missions m’ont permis de développer des compétences variées et approfondies.
                     </p>
-                    <p className="text-lg text-[#e5e5e5]">
+                    <p className="text-lg text-[#e5e5e5] drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">
                         Fort de cinq ans d’expérience, je maîtrise l’ensemble du cycle de développement, de la conception technique à la livraison du projet.
                         Mes compétences en design d'interface / expérience utilisateur et mon expérience en développement agile me permettent de répondre
                         efficacement aux besoins des clients. Je suis également certifié en UX/UI et en développement NodeJS, ce qui renforce ma capacité à créer
