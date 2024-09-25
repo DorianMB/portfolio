@@ -758,7 +758,7 @@ export default React.memo(function Parallax() {
     }
 
     return (
-        <motion.div className="absolute">
+        <motion.div className="absolute top-0 left-0 w-screen h-screen">
             {iconsParallaxLeft && iconsParallaxLeft.length > 0 && iconsParallaxLeft.map((para, index) => (
                 <motion.div
                     key={'icon-left-' + index}

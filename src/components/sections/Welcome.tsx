@@ -21,12 +21,12 @@ export default function Welcome() {
         Full Stack Développeur
       </motion.h2>
       <motion.p
-        className="text-2xl mb-8 text-[#e5e5e5] text-stroke"
+        className="text-2xl mb-8 text-[#e5e5e5] drop-shadow"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
       >
-        Lançons ensemble des sites et des applications robustes dans l'univers Internet
+        Propulsons ensemble vos projets web vers de nouveaux horizons
       </motion.p>
       <motion.div
         initial={{ opacity: 0 }}
