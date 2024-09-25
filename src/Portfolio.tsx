@@ -65,11 +65,10 @@ const useCountUp = (end: number, duration: number = 2, start: number = 0) => {
 
 export default function Portfolio() {
 
-  const aboutSectionRef = useRef<HTMLDivElement>(null);
-
-  const scrollToAbout = () => {
-    if (aboutSectionRef.current) {
-      aboutSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  const scrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -1039,21 +1038,21 @@ export default function Portfolio() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <a href="#about"
-               className="hover:text-[#fca311] transition-colors">
+            <a onClick={() => scrollTo('about')}
+               className="hover:text-[#fca311] hover:cursor-pointer transition-colors">
               A propos de moi
             </a>
             <a
-              href="#projects"
-              className="hover:text-[#fca311] transition-colors"
+              onClick={() => scrollTo('projects')}
+              className="hover:text-[#fca311] hover:cursor-pointer transition-colors"
             >
               Projets
             </a>
             <a
-              href="#contact"
-              className="hover:text-[#fca311] transition-colors"
+              onClick={() => scrollTo('stats')}
+              className="hover:text-[#fca311] hover:cursor-pointer transition-colors"
             >
-              Contact
+              Quelques chiffres
             </a>
           </motion.nav>
         </div>
@@ -1115,7 +1114,7 @@ export default function Portfolio() {
             <Button
               size="lg"
               className="bg-[#fca311] hover:bg-[#e5e5e5] text-[#000000] hover:text-[#14213d]"
-              onClick={scrollToAbout}
+              onClick={() => scrollTo('about')}
             >
               <Rocket className="mr-2 h-4 w-4" />
               Explorez mon travail
@@ -1133,7 +1132,6 @@ export default function Portfolio() {
 
         <motion.section
           id="about"
-          ref={aboutSectionRef}
           className="py-20"
           initial="hidden"
           whileInView="visible"
@@ -1255,6 +1253,7 @@ export default function Portfolio() {
           className="py-20"
           initial="hidden"
           whileInView="visible"
+          id="stats"
           viewport={{ once: true }}
           variants={containerVariants}
         >
