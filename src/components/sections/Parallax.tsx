@@ -18,7 +18,7 @@ export default React.memo(function Parallax() {
     const { scrollY } = useScroll();
     const screenWidth = window.screen.width;
     const screenHeight = window.screen.height;
-    const multiPara = 4;
+    const multiPara = 10;
 
     // Positions aléatoires pour chaque icône
     let iconsParallaxLeft = [
