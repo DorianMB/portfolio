@@ -193,6 +193,7 @@ export default function Portfolio() {
       <main className="container mx-auto px-4 relative">
         {/* Parallax Emojis */}
         <Parallax></Parallax>
+
         <motion.section
           id="top"
           className="py-20 text-center flex flex-col justify-center h-section-top relative z-50"
@@ -289,7 +290,7 @@ export default function Portfolio() {
 
         <motion.section
           id="projects"
-          className="py-20"
+          className="py-20 relative z-50"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -357,7 +358,7 @@ export default function Portfolio() {
         </motion.section>
 
         <motion.section
-          className="py-20"
+          className="py-20 relative z-50"
           initial="hidden"
           whileInView="visible"
           id="stats"
@@ -382,7 +383,7 @@ export default function Portfolio() {
                 >
                   {achievement.icon}
                   <span ref={ref} className="text-4xl font-bold text-[#fca311]">
-                    {count.toLocaleString()}
+                    {count.toString()}
                   </span>
                   <span className="text-center text-[#e5e5e5]">{achievement.label}</span>
                 </motion.div>

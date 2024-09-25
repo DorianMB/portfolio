@@ -58,7 +58,7 @@ export function getRandomPosition(min: number, max: number): number {
 
 // Fonction pour générer un décalage Y avec scroll
 export function getScrollTransform(scrollY: MotionValue<number>, minScroll: number, maxScroll: number) {
-  return useTransform(scrollY, [0, 500], [getRandomNum(minScroll, 0, 1), getRandomNum(0, maxScroll, 1)]);
+  return useTransform(scrollY, [0,  maxScroll], [getRandomNum(minScroll, 0, 1), getRandomNum(0, maxScroll, 1)]);
 }
 
 // Fonction pour générer une rotation aléatoire
