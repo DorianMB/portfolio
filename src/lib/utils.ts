@@ -1,5 +1,5 @@
 import { clsx, type ClassValue } from "clsx"
-import { MotionValue, useInView, useScroll, useTransform } from "framer-motion";
+import { MotionValue, useInView, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge"
 
