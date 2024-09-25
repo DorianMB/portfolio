@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import {scrollTo} from "../../lib/utils"
+import {scrollTo} from "@/lib/utils"
 
 export default function Header() {
 
