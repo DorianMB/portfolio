@@ -32,6 +32,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  scrollbar-width: none;
 }
 
 h1 {
@@ -146,4 +147,8 @@ button:focus-visible {
 
 .text-stroke {
   -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 0;
 }
