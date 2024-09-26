@@ -14,13 +14,28 @@ import {
     X,
 } from 'lucide-react';
 import { SectionProps } from '@/lib/models'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const MotionCard = motion.create(Card);
 
 export default function Projects({ containerVariants, itemVariants }: SectionProps) {
 
     const [selectedProject, setSelectedProject] = useState<number | null>(null);
+
+    useEffect(() => {
+        if (selectedProject !== null) {
+          // Bloque le scroll
+          document.body.style.overflow = 'hidden';
+        } else {
+          // Rétablit le scroll
+          document.body.style.overflow = 'auto';
+        }
+    
+        // Nettoie l'effet lors du démontage du composant
+        return () => {
+          document.body.style.overflow = 'auto';
+        };
+      }, [selectedProject]);
 
     // list of projects
     const projects = [
@@ -211,13 +226,13 @@ export default function Projects({ containerVariants, itemVariants }: SectionPro
                 {selectedProject !== null && (
                     <motion.div
                         layoutId={`project-${selectedProject}`}
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50"
+                        className="fixed inset-0 z-[800] flex items-center justify-center p-4 bg-black bg-opacity-50"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                     >
                         <motion.div
-                            className="bg-[#14213d] w-full max-w-4xl rounded-lg overflow-hidden relative"
+                            className="bg-[#14213d] w-full max-w-4xl rounded-lg overflow-hidden relative z-[800]"
                             layoutId={`project-content-${selectedProject}`}
                         >
                             <motion.img
