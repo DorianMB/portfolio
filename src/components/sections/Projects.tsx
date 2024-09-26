@@ -241,7 +241,7 @@ export default function Projects({ containerVariants, itemVariants }: SectionPro
                                 alt={projects[selectedProject - 1].title}
                                 className="w-full h-64 object-cover"
                             />
-                            <div className="p-6">
+                            <div className="p-6 overflow-scroll max-h-[60vh]">
                                 <motion.h3
                                     layoutId={`project-title-${selectedProject}`}
                                     className="text-2xl font-bold text-[#fca311] mb-4"
