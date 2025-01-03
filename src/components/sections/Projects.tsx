@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
     Card,
@@ -8,11 +8,11 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { SectionProps } from '@/lib/models';
+import { motion } from 'framer-motion';
 import {
     Rocket,
 } from 'lucide-react';
-import { SectionProps } from '@/lib/models'
 import { useEffect, useState } from 'react';
 import ModalProject from '../common/ModalProject';
 
@@ -76,7 +76,7 @@ export default function Projects({ containerVariants, itemVariants }: SectionPro
             title: 'Développeur Front React | Nexans Asset Electrical',
             description: `Création d’une plateforme de simulation pour Nexans sur la base d’un projet open source de Cosmotech. 
       Gestion des données liés aux simulations pour importations, modifications et sauvegarde en amont.`,
-            image: 'https://fret21.eu/wp-content/uploads/2020/11/NEXANS_Logo_CMYK-01-scaled.jpg',
+            image: 'https://www.activateurdeprogres.fr/sites/default/files/activator_form/NEXANS_logo_2021_CMYK.jpg',
             technologies: ['React'],
             actions: [
                 'Challenge des maquettes',

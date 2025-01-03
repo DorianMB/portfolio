@@ -1,5 +1,5 @@
+import { scrollTo } from "@/lib/utils";
 import { motion } from "framer-motion";
-import {scrollTo} from "@/lib/utils"
 
 export default function Header() {
 
@@ -14,7 +14,7 @@ export default function Header() {
                 >
                     <div className="relative w-20 h-20 mr-4 rounded-full overflow-hidden border-4 border-[#fca311] shadow-lg">
                         <img
-                            src="https://media.licdn.com/dms/image/v2/C5603AQEJ2oFs_spU9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1583250393013?e=1732147200&v=beta&t=XyOkyW37mzQ0ERc5FkjN0BJc9l4Vb__ZZd90IlHCjLs"
+                            src="https://media.licdn.com/dms/image/v2/C5603AQEJ2oFs_spU9g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1583250392944?e=1741219200&v=beta&t=uC453lt0fp2u-vt9FODhot7zJAnf2bnyUWX7sxqKElk"
                             alt="Dorian Marques"
                             className="w-full h-full object-cover"
                         />
